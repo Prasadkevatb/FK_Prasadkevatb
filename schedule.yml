@@ -1,1 +1,26 @@
+name: Run Python script at 17:29 UTC daily
 
+on:
+  schedule:
+    - cron: "30 17 * * *"
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt || true  # skip if no requirements
+
+    - name: Run Python script
+      run: python test.py
