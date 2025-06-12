@@ -2,7 +2,7 @@ name: Run Python script at 17:29 UTC daily
 
 on:
   schedule:
-    - cron: "30 17 * * *"
+    - cron: "36 17 * * *"
   workflow_dispatch:
 
 jobs:
