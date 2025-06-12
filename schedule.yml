@@ -2,7 +2,7 @@ name: Run Python script
 
 on:
   schedule:
-    - cron: "01 4 * * *"  # 18:00 IST = 12:30 UTC
+    - cron: "04 4 * * *"  # 08:20 IST
   workflow_dispatch:
 
 jobs:
@@ -20,7 +20,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        pip install -r requirements.txt || true  # skip if no requirements
+        pip install -r requirements.txt || pip install gspread pandas gspread_dataframe google-api-python-client google-auth
 
     - name: Run Python script
-      run: python Test.py  # Use correct case-sensitive filename
+      env:
+        GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+      run: python Test.py
