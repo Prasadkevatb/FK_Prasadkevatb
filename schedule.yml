@@ -2,7 +2,7 @@ name: Run Python script
 
 on:
   schedule:
-    - cron: "28 12 * * *"  # 17:43 IST = 12:13 UTC
+    - cron: "30 12 * * *"  # 18:00 IST = 12:30 UTC
   workflow_dispatch:
 
 jobs:
@@ -23,4 +23,4 @@ jobs:
         pip install -r requirements.txt || true  # skip if no requirements
 
     - name: Run Python script
-      run: python Test.py  # Corrected filename case
+      run: python Test.py  # Use correct case-sensitive filename
