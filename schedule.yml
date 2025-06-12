@@ -1,8 +1,8 @@
-name: Run Python script at 17:29 UTC daily
+name: Run Python script at 17:43 IST daily
 
 on:
   schedule:
-    - cron: "36 17 * * *"
+    - cron: "13 12 * * *"  # 17:43 IST = 12:13 UTC
   workflow_dispatch:
 
 jobs:
