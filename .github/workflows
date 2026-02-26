@@ -2,8 +2,8 @@ name: Run Python script
 
 on:
   schedule:
-    # 12:55 PM IST is 07:25 AM UTC
-    - cron: "25 7 * * *"  
+    # 13:20 IST minus 5:30 = 07:50 UTC
+    - cron: "50 7 * * *"  
   workflow_dispatch:
 
 jobs:
