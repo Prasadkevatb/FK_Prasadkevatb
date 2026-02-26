@@ -1,0 +1,5 @@
+on:
+  schedule:
+    # 02:05 PM IST (14:05) minus 5:30 = 08:35 AM UTC
+    - cron: "35 8 * * *"  
+  workflow_dispatch:
